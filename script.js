@@ -1,47 +1,55 @@
-function handleTicketChange (ticket, isIncrease) {
-    const ticketInput = document.getElementById(ticket + '-count');
-    const ticketCount = parseInt(ticketInput.value);
-    let ticketNewCount = ticketCount;
-    if (isIncrease == true) {
-        ticketNewCount = ticketCount + 1;
+// ticket count calulate
+function calculateTicketCount(isIncrease, clickFrom) {
+    // ticket count increase
+    if (clickFrom == 'firstClass') {
+        const firstClassTicketInput = document.getElementById('first-count');
+        if (!isIncrease) {
+            if (firstClassTicketInput.value != 0) {
+                firstClassTicketInput.value--;
+            }
+        }
+        else {
+            firstClassTicketInput.value++;
+        }
+
     }
-    if (isIncrease == false && ticketCount > 0) {
-        ticketNewCount = ticketCount - 1;
+    // ticket count decrease
+    else {
+        const economyClassTicketInput = document.getElementById('second-count');
+        if (!isIncrease) {
+            if (economyClassTicketInput.value != 0) {
+                economyClassTicketInput.value--;
+            }
+        }
+        else {
+            economyClassTicketInput.value++;
+        }
     }
-    ticketInput.value = ticketNewCount;
     calculateTotal();
 }
 
-function calculateTotal () {
-    const firstCount = getInputValue ('first');
-    const secondCount = getInputValue ('second');
-
-    totalPrice = firstCount * 150 + secondCount * 100;
-    document.getElementById('total-price').innerText = '$' + totalPrice;
-
-    const vat = Math.round(totalPrice * 0.1);
-    document.getElementById('vat-amount').innerText = '$' + vat;
-
-    const grandTotal = totalPrice + vat;
-    document.getElementById('grand-total').innerText = '$' + grandTotal;
+// total cost calculate
+function calculateTotal() {
+    const firstClassTicketInput = document.getElementById('first-count');
+    const economyClassticketInput = document.getElementById('second-count');
+    let subTotal = (parseInt(firstClassTicketInput.value) * 150) + (parseInt(economyClassticketInput.value) * 100);
+    let totalVat = (subTotal * 10) / 100;
+    document.getElementById('vat-amount').innerText = '$' + totalVat;
+    document.getElementById('subtotal-price').innerText = '$' + subTotal;
+    document.getElementById('grand-total').innerText = '$' + (subTotal + totalVat);
 }
 
-function getInputValue (ticket) {
-    const ticketInput = document.getElementById(ticket + '-count');
-    const ticketCount = parseInt(ticketInput.value);
-    return ticketCount;
-}
 
 // booking button event handler
 const bookingBtn = document.getElementById('bookBtn');
-bookingBtn.addEventListener('click', function() {
+bookingBtn.addEventListener('click', function () {
     const bookingArea = document.getElementById('booking-area');
     bookingArea.style.display = 'none';
     const trasactionArea = document.getElementById('confirmation');
     trasactionArea.style.display = 'block';
+    // user message info
+    document.getElementById('ticketCountFirst').innerText = document.getElementById('first-count').value;
+    document.getElementById('ticketCountSecond').innerText = document.getElementById('second-count').value;
+    document.getElementById('totalAmount').innerText = document.getElementById('grand-total').innerText;
 
 })
-
-// user meeseage
-const inputText = document.getElementById('first-count').value;
-    document.getElementById('ticketShow') = inputText;

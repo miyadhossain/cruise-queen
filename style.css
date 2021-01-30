@@ -33,6 +33,7 @@ nav ul li a{
     padding: 10px;
     text-transform: uppercase;
     margin-left: 30px;
+    text-decoration: none;
 }
 nav ul li a:hover, a.active{
     background-color: #E33741;
@@ -96,6 +97,12 @@ nav ul li a:hover, a.active{
 .inp-width{
     min-width: 300px;
 }
+/* number input field */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .plus-minus-btn{
     color: #3352F2;
     font-size: 25px;
@@ -125,4 +132,14 @@ nav ul li a:hover, a.active{
 }
 #confirmation {
     display: none;
+}
+#confirmation p {
+    font-weight: 900;
+}
+#confirmation .alert {
+    border-radius: 20px;
+    background-color: #f5f6f7;
+}
+#confirmation {
+    padding: 0 150px;
 }

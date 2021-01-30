@@ -63,8 +63,8 @@
                 <div class="d-flex align-items-center">
                     <input class="inp-style inp-width" id="first-count" type="number" value="0">
                     <div class="d-flex align-items-center">
-                        <button onclick="handleTicketChange('first', true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
-                        <button onclick="handleTicketChange('first', false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                        <button onclick="calculateTicketCount(true, 'firstClass')" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        <button onclick="calculateTicketCount(false, 'firstClass')" class="btn btn-default"><i class="fas fa-minus"></i></button>
                     </div>
                 </div>
             </div>
@@ -76,19 +76,20 @@
                 <div class="d-flex align-items-center">
                     <input class="inp-style inp-width" id="second-count" type="number" value="0">
                     <div class="d-flex align-items-center">
-                        <button onclick="handleTicketChange('second', true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
-                        <button onclick="handleTicketChange('second', false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                        <button onclick="calculateTicketCount(true, 'secondClass')" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        <button onclick="calculateTicketCount(false, 'secondClass')" class="btn btn-default"><i class="fas fa-minus"></i></button>
                     </div>
                 </div>
             </div>
             
+            <!-- calculations part -->
             <div class="calculations">
                 <div class="amount">
                     <div class="left">
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="total-price">$00</p>
+                        <p id="subtotal-price">$00</p>
                     </div>
                 </div>
 
@@ -114,11 +115,15 @@
         </div>
     </main>
 
+    <!-- confirmation message -->
     <section id="confirmation" class="container mt-5">
-        <div>
-            <h1 class="text-white text-center">Thanks!</h1>
-            <p class="text-white" id="ticketShow">Ticket count:</p>
-        </div>
+        <div class="alert alert-light shadow" role="alert">
+            <h3 class="alert-heading text-center text-success"><strong><span><i class="fas fa-check"></i></span> Booking is successful!</strong></h3>
+            <p class="text-center">First Class Ticket : <span id="ticketCountFirst">$00</span></p>
+            <p class="text-center">Second Class Ticket : <span id="ticketCountSecond">$00</span></p>
+            <hr>
+            <p class="text-center">Your total amount : <span id="totalAmount">$00</span></p>
+          </div>
     </section>
     
 
