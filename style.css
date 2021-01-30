@@ -98,10 +98,11 @@ nav ul li a:hover, a.active{
 }
 .plus-minus-btn{
     color: #3352F2;
-    font-size: 30px;
+    font-size: 25px;
     padding: 2px;
     margin: 10px 5px 0px 0px;
     word-spacing: 20px;
+    border: 0;
 }
 .booking-form .inputs{
     display: grid;
