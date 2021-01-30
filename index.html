@@ -33,11 +33,10 @@
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book./p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
 
-
-        <div class="booking-form">
+        <div id="booking-area" class="booking-form">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -111,9 +110,17 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="bookBtn" class="btn-style">Book Now</button>
         </div>
     </main>
+
+    <section id="confirmation" class="container mt-5">
+        <div>
+            <h1 class="text-white text-center">Thanks!</h1>
+            <p class="text-white" id="ticketShow">Ticket count:</p>
+        </div>
+    </section>
+    
 
     <!--Thank You-->
 </body>
@@ -121,4 +128,5 @@
 
 <!-- js link -->
 <script src="./script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </html>

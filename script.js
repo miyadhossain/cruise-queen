@@ -31,3 +31,17 @@ function getInputValue (ticket) {
     const ticketCount = parseInt(ticketInput.value);
     return ticketCount;
 }
+
+// booking button event handler
+const bookingBtn = document.getElementById('bookBtn');
+bookingBtn.addEventListener('click', function() {
+    const bookingArea = document.getElementById('booking-area');
+    bookingArea.style.display = 'none';
+    const trasactionArea = document.getElementById('confirmation');
+    trasactionArea.style.display = 'block';
+
+})
+
+// user meeseage
+const inputText = document.getElementById('first-count').value;
+    document.getElementById('ticketShow') = inputText;
